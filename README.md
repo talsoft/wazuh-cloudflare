@@ -77,7 +77,7 @@ This project combines the power of **Wazuh XDR** and **Cloudflare** to deliver a
 #### Configure Active Response in Wazuh
 
 1. In `/var/ossec/etc/ossec.conf`, add:
-   ```xml
+   ```
  <ossec_config>
   <command>
     <name>cloudflare-block</name>
