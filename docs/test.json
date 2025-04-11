@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "origin": {
+    "name": "node01",
+    "module": "wazuh-execd"
+  },
+  "command": "add",
+  "parameters": {
+    "action": "add",
+    "extra_args": [],
+    "alert": {
+      "timestamp": "2025-04-09T14:50:00.123-0300",
+      "rule": {
+        "level": 10,
+        "description": "SSHD brute force trying different users.",
+        "id": "5712",
+        "firedtimes": 50,
+        "groups": ["sshd", "authentication_failed"]
+      },
+      "agent": {
+        "id": "001",
+        "name": "webserver-01",
+        "ip": "192.168.1.10"
+      },
+      "manager": {
+        "name": "wazuh-manager"
+      },
+      "id": "1712685000.12345",
+      "data": {
+        "srcip": "198.51.100.123",
+        "srcport": "54321",
+        "dstuser": "invaliduser"
+      },
+      "location": "sshd"
+    },
+    "program": "/var/ossec/active-response/bin/cloudflare-block-ip.py"
+  }
+}
