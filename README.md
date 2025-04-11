@@ -77,22 +77,21 @@ This project combines the power of **Wazuh XDR** and **Cloudflare** to deliver a
 #### Configure Active Response in Wazuh
 
 1. In `/var/ossec/etc/ossec.conf`, add:
-   ```
- <ossec_config>
-  <command>
-    <name>cloudflare-block</name>
-    <executable>cloudflare-block-ip.py</executable>
-    <timeout_allowed>yes</timeout_allowed>
-  </command>
-
-  <active-response>
-    <disabled>no</disabled>
-    <command>cloudflare-block</command>
-    <location>server</location> 
-    <rules_id>5712,5720</rules_id>
-    <timeout>60</timeout>
-  </active-response>
-</ossec_config>
+   ```xml
+    <ossec_config>
+    <command>
+        <name>cloudflare-block</name>
+        <executable>cloudflare-block-ip.py</executable>
+        <timeout_allowed>yes</timeout_allowed>
+    </command>
+    <active-response>
+        <disabled>no</disabled>
+        <command>cloudflare-block</command>
+        <location>server</location> 
+        <rules_id>5712,5720</rules_id>
+        <timeout>60</timeout>
+    </active-response>
+    </ossec_config>
    ```
 
 3. Restart Wazuh:
